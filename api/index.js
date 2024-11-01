@@ -5,13 +5,12 @@ const userRoutes = require('./routes/userRoutes'); // Ensure this path is correc
 const surveyRoutes = require('./routes/surveyRoutes');
 const questionRoutes = require('./routes/questionRoutes');
 const responseRoutes = require('./routes/responseRoutes');
-const config = require('./config/db');
 const cors = require('cors');
 const app = express();
 
 // Middleware
 app.use(bodyParser.json());
-app.use(cors());
+app.use(cors({ origin: '*' }));
 
 // Logging Middleware
 app.use((req, res, next) => {
@@ -20,10 +19,7 @@ app.use((req, res, next) => {
 });
 
 // Import models
-require('./models/user.model');
 require('./models/question.model');
-require('./models/survey.model');
-require('./models/response.model');
 
 // Routes
 app.use('/api/users', userRoutes); // Ensure this path is correct

@@ -1,4 +1,4 @@
-const Response = require('../models/response.model');
+const Response = require('../models/question.model');
 const { Survey } = require('../models/question.model');
 
 const getSurveyResponses = async (req, res) => {
