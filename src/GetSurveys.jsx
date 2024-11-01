@@ -8,7 +8,7 @@ const GetSurveys = () => {
   useEffect(() => {
     const fetchSurveys = async () => {
       try {
-        const response = await axios.get('https://healthapi-orcin.vercel.app/api/survey/getSurvey');
+        const response = await axios.get('https://healthapi-orcin.vercel.app/api/survey/getSurvey',{withCredentials:true});
         setSurveys(response.data);
       } catch (error) {
         console.error('Error fetching surveys:', error);
