@@ -12,8 +12,8 @@
 /build
 
 #backend
-/serverex/node_modules
-/serverex/.env
+/api/node_modules
+/api/.env
 
 # misc
 .DS_Store
