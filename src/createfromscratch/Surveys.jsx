@@ -10,7 +10,7 @@ export default function Surveys() {
         // Fetch the list of surveys from the surveyController
         const fetchSurveys = async () => {
             try {
-                const response = await axios.get('https://healthapi-orcin.vercel.app/api/survey/getSurvey');
+                const response = await axios.get('/api/survey/getSurvey');
                 setSurveys(response.data);
             } catch (error) {
                 console.error('Error fetching surveys:', error);
@@ -29,7 +29,7 @@ export default function Surveys() {
     const handleGenerateReport = async () => {
         if (selectedSurvey) {
             try {
-                const response = await axios.get(`https://healthapi-orcin.vercel.app/api/responses/${selectedSurvey}`);
+                const response = await axios.get(`/api/responses/${selectedSurvey}`);
                 console.log(response.data);
                 const report = generateCSV(response.data);
                 downloadCSV(report, `report_${selectedSurvey}.csv`);

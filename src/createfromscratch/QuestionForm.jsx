@@ -160,7 +160,7 @@ function QuestionForm() {
     console.log(data);
     try {
       const response = await axios.post(
-        "https://healthapi-orcin.vercel.app/api/survey/saveSurvey",
+        "/api/survey/saveSurvey",
         data
       );
       console.log("Survey saved successfully!", response.data);
