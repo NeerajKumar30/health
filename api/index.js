@@ -13,13 +13,14 @@ app.use(bodyParser.json());
 const allowedOrigins = ['https://health-lemon.vercel.app'];
 
 app.use(cors({
-    origin: (origin, callback) => {
-        if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
-            callback(null, origin);
-        } else {
-            callback(new Error('Not allowed by CORS'));
-        }
-    },
+    // origin: (origin, callback) => {
+    //     if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
+    //         callback(null, origin);
+    //     } else {
+    //         callback(new Error('Not allowed by CORS'));
+    //     }
+    // },
+    origin:"*",
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
 }));
